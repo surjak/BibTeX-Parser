@@ -1,29 +1,26 @@
 package bib.parser.models;
 
 import bib.parser.fields.FieldType;
-import bib.parser.fields.SingleFieldTypeImpl;
 import bib.parser.fields.IFieldType;
+import bib.parser.fields.SingleFieldTypeImpl;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class Article extends Entry {
-
-    protected static EntryType type = EntryType.ARTICLE;
+public class Mastersthesis extends Entry {
+    protected static EntryType type = EntryType.MASTERSTHESIS;
     protected static Map<FieldType, IFieldType> requiredFields = new LinkedHashMap<>();
     protected static Map<FieldType, IFieldType> optionalFields = new LinkedHashMap<>();
 
-    public Article(Map<FieldType, String> fields, String key) {
+    public Mastersthesis(Map<FieldType, String> fields, String key) {
         super(fields, key);
-
         requiredFields.put(FieldType.AUTHOR, new SingleFieldTypeImpl(FieldType.AUTHOR));
         requiredFields.put(FieldType.TITLE, new SingleFieldTypeImpl(FieldType.TITLE));
-        requiredFields.put(FieldType.JOURNAL, new SingleFieldTypeImpl(FieldType.JOURNAL));
+        requiredFields.put(FieldType.SCHOOL, new SingleFieldTypeImpl(FieldType.SCHOOL));
         requiredFields.put(FieldType.YEAR, new SingleFieldTypeImpl(FieldType.YEAR));
 
-        optionalFields.put(FieldType.VOLUME, new SingleFieldTypeImpl(FieldType.VOLUME));
-        optionalFields.put(FieldType.NUMBER, new SingleFieldTypeImpl(FieldType.NUMBER));
-        optionalFields.put(FieldType.PAGES, new SingleFieldTypeImpl(FieldType.PAGES));
+        optionalFields.put(FieldType.TYPE, new SingleFieldTypeImpl(FieldType.TYPE));
+        optionalFields.put(FieldType.ADDRESS, new SingleFieldTypeImpl(FieldType.ADDRESS));
         optionalFields.put(FieldType.MONTH, new SingleFieldTypeImpl(FieldType.MONTH));
         optionalFields.put(FieldType.NOTE, new SingleFieldTypeImpl(FieldType.NOTE));
         optionalFields.put(FieldType.KEY, new SingleFieldTypeImpl(FieldType.KEY));

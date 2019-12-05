@@ -3,11 +3,11 @@ package bib.parser.fields;
 import java.util.Objects;
 import java.util.Set;
 
-public class FieldTypeSelectionImpl implements IFieldType {
+public class MultipleFieldTypeImpl implements IFieldType {
 private FieldType fieldType1;
 private FieldType fieldType2;
 
-    public FieldTypeSelectionImpl(FieldType fieldType1, FieldType fieldType2) {
+    public MultipleFieldTypeImpl(FieldType fieldType1, FieldType fieldType2) {
         this.fieldType1 = fieldType1;
         this.fieldType2 = fieldType2;
     }
@@ -40,7 +40,7 @@ private FieldType fieldType2;
     @Override
     public boolean equals(Object o) {
         if (o == null) return false;
-        if(o.getClass() != FieldTypeSingletonImpl.class && o.getClass() != FieldTypeSelectionImpl.class) return false;
+        if(o.getClass() != SingleFieldTypeImpl.class && o.getClass() != MultipleFieldTypeImpl.class) return false;
         IFieldType that = (IFieldType) o;
         return that.keyEquals(this.fieldType1);
     }
