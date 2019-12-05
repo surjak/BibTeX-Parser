@@ -1,15 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="571cde07-b2d1-4123-9cd6-3056cfd28456" name="Default Changelist" comment="" />
+    <list default="true" id="571cde07-b2d1-4123-9cd6-3056cfd28456" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/bib/parser/Document.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bib/parser/fields/FieldType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bib/parser/fields/FieldTypeSelectionImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bib/parser/fields/FieldTypeSingletonImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bib/parser/fields/IFieldType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bib/parser/models/Article.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bib/parser/models/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bib/parser/models/Entry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bib/parser/models/EntryType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1ULucxcIokSWBO7UBYlt4Q4XiYC" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="show.migrate.to.gradle.popup" value="false" />
@@ -54,10 +78,32 @@
       <option name="presentableId" value="Default" />
       <updated>1575148279053</updated>
       <workItem from="1575148283129" duration="60000" />
+      <workItem from="1575198490015" duration="10000" />
+      <workItem from="1575200023243" duration="343000" />
+      <workItem from="1575205276948" duration="11000" />
+      <workItem from="1575210202864" duration="3000" />
+      <workItem from="1575275962953" duration="660000" />
+      <workItem from="1575280423902" duration="337000" />
+      <workItem from="1575285620953" duration="271000" />
+      <workItem from="1575375525702" duration="1688000" />
+      <workItem from="1575486608245" duration="2895000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
