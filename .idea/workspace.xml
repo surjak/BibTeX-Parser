@@ -2,21 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="571cde07-b2d1-4123-9cd6-3056cfd28456" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/bib/parser/models/Booklet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bib/parser/models/Conference.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bib/parser/models/Inbook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bib/parser/models/Incollection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bib/parser/models/Inproceedings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bib/parser/models/Manual.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bib/parser/models/Mastersthesis.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bib/parser/models/Misc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bib/parser/models/Phdthesis.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bib/parser/models/Techreport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bib/parser/models/Unpublished.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/fields/FieldTypeSelectionImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/fields/MultipleFieldTypeImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/fields/FieldTypeSingletonImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/fields/SingleFieldTypeImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bib/parser/documentStorage/Document.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bib/parser/inputHandler/InputHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bib/parser/parser/Parser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bib/parser/parser/StringService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BibTeX-Parser/bib/parser/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BibTeX-Parser/bib/parser/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/Document.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/fields/IFieldType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/fields/IFieldType.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +53,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="bib.parser.Main" />
       <module name="BibTeX-Parser" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="PROGRAM_PARAMETERS" value="C:\Users\surja\Desktop\Studia\PO\BibTeXParserPO-master\data\testSample.bib" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
@@ -92,7 +86,8 @@
       <workItem from="1575285620953" duration="271000" />
       <workItem from="1575375525702" duration="1688000" />
       <workItem from="1575486608245" duration="2895000" />
-      <workItem from="1575553944093" duration="1691000" />
+      <workItem from="1575553944093" duration="3206000" />
+      <workItem from="1575807038640" duration="2990000" />
     </task>
     <task id="LOCAL-00001" summary="implemented few models ale main classes">
       <created>1575554017671</created>
@@ -101,7 +96,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575554017671</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="defined all models">
+      <created>1575555651406</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1575555651406</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +124,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="implemented few models ale main classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented few models ale main classes" />
+    <MESSAGE value="defined all models" />
+    <option name="LAST_COMMIT_MESSAGE" value="defined all models" />
   </component>
 </project>

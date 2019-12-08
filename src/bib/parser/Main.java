@@ -1,8 +1,52 @@
 package bib.parser;
 
-public class Main {
+import bib.parser.fields.FieldType;
+import bib.parser.inputHandler.InputHandler;
+import bib.parser.models.*;
+import bib.parser.parser.Parser;
 
-    public static void main(String[] args) {
-        System.out.println("Parser");
+import java.io.FileNotFoundException;
+import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class Main {
+    private static Map<EntryType, Class<? extends Entry>> entryTypeMap = new HashMap<>();
+
+    private static void initMap(){
+        entryTypeMap.put(EntryType.ARTICLE, Article.class);
+        entryTypeMap.put(EntryType.BOOK, Book.class);
+        entryTypeMap.put(EntryType.INPROCEEDINGS, Inproceedings.class);
+        entryTypeMap.put(EntryType.CONFERENCE, Conference.class);
+        entryTypeMap.put(EntryType.BOOKLET, Booklet.class);
+        entryTypeMap.put(EntryType.INBOOK, Inbook.class);
+        entryTypeMap.put(EntryType.INCOLLECTION, Incollection.class);
+        entryTypeMap.put(EntryType.MANUAL, Manual.class);
+        entryTypeMap.put(EntryType.MASTERSTHESIS, Mastersthesis.class);
+        entryTypeMap.put(EntryType.PHDTHESIS, Phdthesis.class);
+        entryTypeMap.put(EntryType.TECHREPORT, Techreport.class);
+        entryTypeMap.put(EntryType.MISC, Misc.class);
+        entryTypeMap.put(EntryType.UNPUBLISHED, Unpublished.class);
     }
+
+    public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException, FileNotFoundException {
+        initMap();
+        EntryType category = EntryType.ARTICLE;
+        String quotationKey = "ala";
+        LinkedHashMap<FieldType, String> fields = new LinkedHashMap<>();
+        fields.put(FieldType.AUTHOR, "KOwslaki");
+        System.out.println("Parser");
+        Class<? extends Entry> classObject = entryTypeMap.get(category);
+
+
+        Entry record = classObject.getConstructor( Map.class,String.class).newInstance(fields,quotationKey);
+        System.out.println(record.getFields().get(FieldType.AUTHOR));
+        InputHandler.help();
+
+        Parser parser = new Parser();
+        parser.readFile(args[0]);
+
+    }
+
 }

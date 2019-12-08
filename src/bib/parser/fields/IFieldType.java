@@ -3,13 +3,13 @@ package bib.parser.fields;
 import java.util.Set;
 
 public interface IFieldType {
-    public abstract boolean typeEquals(FieldType type);
+    public boolean typeEquals(FieldType type);
 
-    public abstract boolean keyEquals(FieldType type);
-
-
-    public abstract boolean collides(Set<FieldType> types) throws Exception;
+    public boolean keyEquals(FieldType type);
 
 
-    public abstract boolean containedIn(Set<FieldType> types);
+    public boolean collides(Set<FieldType> types) throws Exception;
+
+
+    public boolean containedIn(Set<FieldType> types);
 }
