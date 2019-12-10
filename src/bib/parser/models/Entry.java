@@ -1,6 +1,7 @@
 package bib.parser.models;
 
 import bib.parser.fields.FieldType;
+import bib.parser.fields.IFieldType;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,6 +30,10 @@ public abstract class Entry {
 
     public void setKey(String key) {
         this.key = key;
+    }
+
+    public void checkValidity(Map<FieldType, IFieldType> requiredFields, Map<FieldType, IFieldType> optionalFields, Map<FieldType, String> ownFields){
+        // TODO: 10.12.2019
     }
 
     @Override

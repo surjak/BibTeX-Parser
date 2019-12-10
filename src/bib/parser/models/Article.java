@@ -27,6 +27,8 @@ public class Article extends Entry {
         optionalFields.put(FieldType.MONTH, new SingleFieldTypeImpl(FieldType.MONTH));
         optionalFields.put(FieldType.NOTE, new SingleFieldTypeImpl(FieldType.NOTE));
         optionalFields.put(FieldType.KEY, new SingleFieldTypeImpl(FieldType.KEY));
+
+        super.checkValidity(requiredFields, optionalFields, fields);
     }
 
     public static EntryType getType() {

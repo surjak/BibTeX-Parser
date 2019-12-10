@@ -21,6 +21,7 @@ public class Unpublished extends Entry {
         optionalFields.put(FieldType.MONTH, new SingleFieldTypeImpl(FieldType.MONTH));
         optionalFields.put(FieldType.YEAR, new SingleFieldTypeImpl(FieldType.YEAR));
         optionalFields.put(FieldType.KEY, new SingleFieldTypeImpl(FieldType.KEY));
+        super.checkValidity(requiredFields, optionalFields, fields);
     }
 
     public static EntryType getType() {

@@ -1,5 +1,6 @@
 package bib.parser;
 
+import bib.parser.documentStorage.Document;
 import bib.parser.fields.FieldType;
 import bib.parser.inputHandler.InputHandler;
 import bib.parser.models.*;
@@ -30,23 +31,8 @@ public class Main {
         entryTypeMap.put(EntryType.UNPUBLISHED, Unpublished.class);
     }
 
-    public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException, FileNotFoundException {
+    public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException, FileNotFoundException, ClassNotFoundException {
         initMap();
-        EntryType category = EntryType.ARTICLE;
-        String quotationKey = "ala";
-        LinkedHashMap<FieldType, String> fields = new LinkedHashMap<>();
-        fields.put(FieldType.AUTHOR, "KOwslaki");
-        System.out.println("Parser");
-        Class<? extends Entry> classObject = entryTypeMap.get(category);
-
-
-        Entry record = classObject.getConstructor( Map.class,String.class).newInstance(fields,quotationKey);
-        System.out.println(record.getFields().get(FieldType.AUTHOR));
-        InputHandler.help();
-
-        Parser parser = new Parser();
-        parser.readFile(args[0]);
-
     }
 
 }

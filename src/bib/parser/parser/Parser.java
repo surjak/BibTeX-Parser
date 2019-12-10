@@ -4,13 +4,14 @@ import bib.parser.models.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Parser {
     private  Map<EntryType, Class<? extends Entry>> entryTypeMap = new HashMap<>();
-    public int lineNumber = 0;
     public Parser() {
         entryTypeMap.put(EntryType.ARTICLE, Article.class);
         entryTypeMap.put(EntryType.BOOK, Book.class);
@@ -27,14 +28,22 @@ public class Parser {
         entryTypeMap.put(EntryType.UNPUBLISHED, Unpublished.class);
     }
 
-    public void readFile(String name) throws FileNotFoundException {
+
+
+    public void parse(String name) throws FileNotFoundException {
         File file = new File(name);
         Scanner scanner = new Scanner(file);
-        System.out.println("-----------------------------------------------------------");
+
         while(scanner.hasNextLine()) {
-            lineNumber++;
-            System.out.println(scanner.nextLine());
+
+
+           if (scanner.findInLine( Pattern.compile("@(\\w+)\\s*\\{"))!=null){
+               String model = scanner.match().group(1).toLowerCase();
+               System.out.println(model);
+           }
+           scanner.nextLine();
 
         }
     }
+
 }
