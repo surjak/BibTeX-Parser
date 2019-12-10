@@ -1,21 +1,19 @@
 package bib.parser;
 
-import bib.parser.documentStorage.Document;
-import bib.parser.fields.FieldType;
-import bib.parser.inputHandler.InputHandler;
+
 import bib.parser.models.*;
 import bib.parser.parser.Parser;
+import bib.parser.parser.StringService;
 
-import java.io.FileNotFoundException;
-import java.lang.reflect.InvocationTargetException;
+
 import java.util.HashMap;
-import java.util.LinkedHashMap;
+
 import java.util.Map;
 
 public class Main {
     private static Map<EntryType, Class<? extends Entry>> entryTypeMap = new HashMap<>();
 
-    private static void initMap(){
+    private static void initMap() {
         entryTypeMap.put(EntryType.ARTICLE, Article.class);
         entryTypeMap.put(EntryType.BOOK, Book.class);
         entryTypeMap.put(EntryType.INPROCEEDINGS, Inproceedings.class);
@@ -31,8 +29,10 @@ public class Main {
         entryTypeMap.put(EntryType.UNPUBLISHED, Unpublished.class);
     }
 
-    public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException, FileNotFoundException, ClassNotFoundException {
+    public static void main(String[] args) throws Exception {
         initMap();
+        Parser parser = new Parser();
+        parser.parse(args[0]);
     }
 
 }

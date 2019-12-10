@@ -8,10 +8,13 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 
 public class Parser {
-    private  Map<EntryType, Class<? extends Entry>> entryTypeMap = new HashMap<>();
+    private Map<EntryType, Class<? extends Entry>> entryTypeMap = new HashMap<>();
+
     public Parser() {
         entryTypeMap.put(EntryType.ARTICLE, Article.class);
         entryTypeMap.put(EntryType.BOOK, Book.class);
@@ -29,21 +32,75 @@ public class Parser {
     }
 
 
-
-    public void parse(String name) throws FileNotFoundException {
+    public void parse(String name) throws Exception {
         File file = new File(name);
         Scanner scanner = new Scanner(file);
+        while (scanner.hasNextLine()) {
+            if (scanner.findInLine(Pattern.compile("@(\\w+)\\s*\\{")) != null) {
+                String model = scanner.match().group(1).toLowerCase();
+                if (model.toLowerCase().equals("string")) {
+                    parseStringValue(scanner);
 
-        while(scanner.hasNextLine()) {
+                } else {
+                    // TODO: 10.12.2019
+                }
 
-
-           if (scanner.findInLine( Pattern.compile("@(\\w+)\\s*\\{"))!=null){
-               String model = scanner.match().group(1).toLowerCase();
-               System.out.println(model);
-           }
-           scanner.nextLine();
+            }
+            scanner.nextLine();
 
         }
     }
+
+
+    private void parseStringValue(Scanner scanner) throws Exception {
+
+        String string = this.parseInside(scanner);
+
+        String[] strings = string.split(",");
+        for (String str : strings) {
+
+            Matcher whiteSpaces = Pattern.compile("\\s+").matcher(str);
+
+            if (whiteSpaces.matches()) continue;
+            Matcher record = (Pattern.compile("\\s*([a-zA-Z]\\w*)\\s*=\\s*(\\S.*)\\s*")).matcher(str);
+            if (!record.matches())
+                throw new Exception("cos poszlo nie tak");
+            String stringName = record.group(1);
+            String value = record.group(2);
+            System.out.println(stringName);
+            System.out.println(value);
+            StringService.stringMap.put(stringName,value);
+        }
+
+    }
+
+    private String parseInside(Scanner scanner) {
+        StringBuilder stringBuilder = new StringBuilder();
+        char c = ' ';
+        int countOfBrackets = 1;
+        while (scanner.hasNext() && countOfBrackets > 0) {
+            try {
+                c = scanner.findInLine(".").charAt(0);
+
+            } catch (NullPointerException e) {
+                stringBuilder.append("\n");
+                scanner.nextLine();
+                continue;
+            }
+            if (c == '{') countOfBrackets++;
+            else if (c == '}') countOfBrackets--;
+            if (countOfBrackets > 0) {
+                stringBuilder.append(c);
+            }
+            if (countOfBrackets == 0) {
+                return stringBuilder.toString();
+            }
+
+
+        }
+
+        return stringBuilder.toString();
+    }
+
 
 }
