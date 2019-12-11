@@ -1,20 +1,13 @@
-package bib.parser;
+package bib.parser.parser;
 
-
-import bib.parser.documentStorage.Document;
 import bib.parser.models.*;
-import bib.parser.parser.Parser;
-import bib.parser.parser.StringService;
-
 
 import java.util.HashMap;
-
 import java.util.Map;
 
-public class Main {
-    private static Map<EntryType, Class<? extends Entry>> entryTypeMap = new HashMap<>();
-
-    private static void initMap() {
+public class EntryClassService {
+    public static Map<EntryType, Class<? extends Entry>> entryTypeMap = new HashMap<>();
+    static {
         entryTypeMap.put(EntryType.ARTICLE, Article.class);
         entryTypeMap.put(EntryType.BOOK, Book.class);
         entryTypeMap.put(EntryType.INPROCEEDINGS, Inproceedings.class);
@@ -29,19 +22,8 @@ public class Main {
         entryTypeMap.put(EntryType.MISC, Misc.class);
         entryTypeMap.put(EntryType.UNPUBLISHED, Unpublished.class);
     }
-
-    public static void main(String[] args) throws Exception {
-        initMap();
-        Parser parser = new Parser();
-        Document document = parser.parse(args[0]);
-        document.getEntryMap().forEach((s, entry) -> {
-            System.out.println("___________________________________");
-            System.out.println(s);
-            entry.getFields().forEach((fieldType, s1) -> {
-                System.out.println(fieldType + " ------ " + s1);
-            });
-            System.out.println("____________________________________");
-        });
+    public static Class<? extends Entry> getClassFromEntryType(EntryType entryType){
+        return entryTypeMap.get(entryType);
     }
 
 }

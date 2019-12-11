@@ -34,6 +34,7 @@ public class Document {
         list.forEach(li -> System.out.println(li.getFields().get(FieldType.AUTHOR)));
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

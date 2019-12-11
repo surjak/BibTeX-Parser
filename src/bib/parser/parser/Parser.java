@@ -1,38 +1,25 @@
 package bib.parser.parser;
 
+import bib.parser.documentStorage.Document;
+import bib.parser.fields.FieldType;
 import bib.parser.models.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
 public class Parser {
-    private Map<EntryType, Class<? extends Entry>> entryTypeMap = new HashMap<>();
+
 
     public Parser() {
-        entryTypeMap.put(EntryType.ARTICLE, Article.class);
-        entryTypeMap.put(EntryType.BOOK, Book.class);
-        entryTypeMap.put(EntryType.INPROCEEDINGS, Inproceedings.class);
-        entryTypeMap.put(EntryType.CONFERENCE, Conference.class);
-        entryTypeMap.put(EntryType.BOOKLET, Booklet.class);
-        entryTypeMap.put(EntryType.INBOOK, Inbook.class);
-        entryTypeMap.put(EntryType.INCOLLECTION, Incollection.class);
-        entryTypeMap.put(EntryType.MANUAL, Manual.class);
-        entryTypeMap.put(EntryType.MASTERSTHESIS, Mastersthesis.class);
-        entryTypeMap.put(EntryType.PHDTHESIS, Phdthesis.class);
-        entryTypeMap.put(EntryType.TECHREPORT, Techreport.class);
-        entryTypeMap.put(EntryType.MISC, Misc.class);
-        entryTypeMap.put(EntryType.UNPUBLISHED, Unpublished.class);
     }
 
 
-    public void parse(String name) throws Exception {
+    public Document parse(String name) throws Exception {
+        Document document = new Document();
         File file = new File(name);
         Scanner scanner = new Scanner(file);
         while (scanner.hasNextLine()) {
@@ -42,13 +29,20 @@ public class Parser {
                     parseStringValue(scanner);
 
                 } else {
-                    // TODO: 10.12.2019
+                    Entry entry = parseModel(scanner, model.toLowerCase());
+                    if (entry != null) {
+                        document.addEntry(entry.getKey(), entry);
+                    }
                 }
 
             }
-            scanner.nextLine();
+            if (scanner.hasNextLine()) {
+                scanner.nextLine();
+            }
+
 
         }
+        return document;
     }
 
 
@@ -67,14 +61,12 @@ public class Parser {
                 throw new Exception("cos poszlo nie tak");
             String stringName = record.group(1);
             String value = record.group(2);
-            System.out.println(stringName);
-            System.out.println(value);
-            StringService.stringMap.put(stringName,value);
+            StringService.stringMap.put(stringName, value);
         }
 
     }
 
-    private String parseInside(Scanner scanner) {
+    private String parseInside(Scanner scanner) throws Exception {
         StringBuilder stringBuilder = new StringBuilder();
         char c = ' ';
         int countOfBrackets = 1;
@@ -99,7 +91,51 @@ public class Parser {
 
         }
 
-        return stringBuilder.toString();
+        throw new Exception("Parse inside - end }");
+    }
+
+    private Entry parseModel(Scanner scanner, String model) throws Exception {
+        EntryType entryType;
+        try {
+            entryType = EntryType.valueOf(model.toUpperCase());
+        } catch (IllegalArgumentException e) {
+            return null;
+        }
+        if (entryType == null) {
+            return null;
+        }
+
+        String body = parseInside(scanner);
+        List<String> strings = new ArrayList<>(Arrays.asList(body.split(",")));
+
+        String key = strings.get(0);
+        strings.remove(0);
+        LinkedHashMap<FieldType, String> fields;
+        fields = parseAttribute(strings);
+        Class<? extends Entry> classObject = EntryClassService.getClassFromEntryType(entryType);
+
+        Entry record = classObject.getConstructor(Map.class, String.class).newInstance(fields, key);
+        return record;
+    }
+
+    private LinkedHashMap<FieldType, String> parseAttribute(List<String> strings) {
+        LinkedHashMap<FieldType, String> fieldTypeStringLinkedHashMap = new LinkedHashMap<>();
+        strings.forEach(s -> {
+
+            List<String> name_valueList = new ArrayList<>(Arrays.asList(s.split("=")));
+
+            try {
+
+                FieldType fieldType = FieldType.valueOf(name_valueList.get(0).trim().toUpperCase());
+                name_valueList.remove(0);
+                StringBuilder stringBuilder = new StringBuilder();
+                name_valueList.forEach(value -> stringBuilder.append(value));
+                fieldTypeStringLinkedHashMap.put(fieldType, stringBuilder.toString());
+            } catch (IllegalArgumentException e) {
+
+            }
+        });
+        return fieldTypeStringLinkedHashMap;
     }
 
 

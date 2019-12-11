@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="571cde07-b2d1-4123-9cd6-3056cfd28456" name="Default Changelist" comment="">
+    <list default="true" id="571cde07-b2d1-4123-9cd6-3056cfd28456" name="Default Changelist" comment="basic parser works">
+      <change afterPath="$PROJECT_DIR$/src/bib/parser/parser/EntryClassService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/BibTeX-Parser/bib/parser/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BibTeX-Parser/bib/parser/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bib/parser/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/documentStorage/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/documentStorage/Document.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bib/parser/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/parser/Parser.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,8 +20,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -67,7 +69,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="bib.parser.Main" />
       <module name="BibTeX-Parser" />
-      <option name="PROGRAM_PARAMETERS" value="C:\Users\surja\Desktop\Studia\PO\BibTeXParserPO-master\data\testSample.bib" />
+      <option name="PROGRAM_PARAMETERS" value="C:\Users\surja\Desktop\Studia\PO\BibTeXParserPO-master\data\testSample2.bib" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
@@ -97,6 +99,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.All in BibTeX-Parser" />
+      <item itemvalue="JUnit.MultipleFieldTypeImplTest" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -130,7 +137,8 @@
       <workItem from="1575874955776" duration="657000" />
       <workItem from="1575881274087" duration="4614000" />
       <workItem from="1575926545278" duration="1720000" />
-      <workItem from="1576006367498" duration="7268000" />
+      <workItem from="1576006367498" duration="7528000" />
+      <workItem from="1576083052427" duration="4440000" />
     </task>
     <task id="LOCAL-00001" summary="implemented few models ale main classes">
       <created>1575554017671</created>
@@ -160,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576010384121</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="parseString field">
+      <created>1576016365283</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1576016365283</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,7 +199,9 @@
     <MESSAGE value="defined all models" />
     <MESSAGE value="read file added" />
     <MESSAGE value="refactored some code" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored some code" />
+    <MESSAGE value="parseString field" />
+    <MESSAGE value="basic parser works" />
+    <option name="LAST_COMMIT_MESSAGE" value="basic parser works" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
