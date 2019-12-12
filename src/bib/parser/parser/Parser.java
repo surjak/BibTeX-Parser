@@ -115,6 +115,7 @@ public class Parser {
         Class<? extends Entry> classObject = EntryClassService.getClassFromEntryType(entryType);
 
         Entry record = classObject.getConstructor(Map.class, String.class).newInstance(fields, key);
+        record.setEntryType(entryType);
         return record;
     }
 
@@ -146,16 +147,29 @@ public class Parser {
             if (value.charAt(i) == '"') continue;
             if (value.charAt(i) == '#') {
                 StringBuilder sb2 = new StringBuilder();
-                while (i+1 < value.length()) {
+                while (i + 1 < value.length()) {
+                    if (value.charAt(i + 1) == '"' || value.charAt(i + 1) == '{' || value.charAt((i + 1)) == '#') {
+                        i++;
+                        break;
+                    }
+
                     i++;
                     sb2.append(value.charAt(i));
 
                 }
-                String toAdd = parseValue(StringService.stringMap.get(sb2.toString().trim()));
+                String mapValue = StringService.stringMap.get(sb2.toString().trim());
+                if (mapValue == null) {
+
+                    System.out.println("Elementu nie ma w mapie: " + value);
+                }
+                String toAdd = parseValue(mapValue);
+
                 sb.append(toAdd);
-                if (i+1>=value.length()){
+
+
+                if (i + 1 >= value.length()) {
                     return sb.toString();
-                }else i++;
+                } else i++;
             }
             sb.append(value.charAt(i));
         }

@@ -18,24 +18,27 @@ public class Document {
         entryMap.put(key, entry);
     }
 
-    // TODO: 11.12.2019  
-//    public Map<String, Entry> findByAuthor(String author) {
-//        Map<String, Entry> stringEntryMap = new LinkedHashMap<>();
-//        entryMap.forEach((s, entry) -> {
-//            String value = entry.getFields().get(FieldType.AUTHOR);
-//            if (value!=null){
-//                String[] splitedValue = value.split("and");
-//                for (String val : splitedValue) {
-//                    if (val.trim().equals(author)) {
-//                        stringEntryMap.put(entry.getKey(), entry);}
-//                }
-//            }
-//
-//        });
-//
-//        return stringEntryMap;
-//    }
 
+    public Map<String, Entry> findByAuthor(String author) {
+        Map<String, Entry> stringEntryMap = new LinkedHashMap<>();
+        entryMap.forEach((s, entry) -> {
+            String value = entry.getFields().get(FieldType.AUTHOR);
+            if (value!=null){
+                String[] splitedValue = value.split("and");
+                for (String val : splitedValue) {
+                    if (val.trim().equals(author)) {
+                        stringEntryMap.put(entry.getKey(), entry);}
+                }
+            }
+
+        });
+
+        return stringEntryMap;
+    }
+
+    public void print(){
+        entryMap.forEach((s, entry) -> entry.print());
+    }
 
     @Override
     public boolean equals(Object o) {

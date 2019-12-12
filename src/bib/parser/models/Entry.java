@@ -1,15 +1,21 @@
 package bib.parser.models;
 
 import bib.parser.fields.FieldType;
-import bib.parser.fields.IFieldType;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 public abstract class Entry {
     protected Map<FieldType, String> fields;
     protected String key;
+    private EntryType entryType;
+
+    public void setEntryType(EntryType entryType) {
+        this.entryType = entryType;
+    }
+
+    public EntryType getEntryType() {
+        return entryType;
+    }
 
     public Entry(Map<FieldType, String> fields, String key) {
         this.fields = fields;
@@ -32,8 +38,92 @@ public abstract class Entry {
         this.key = key;
     }
 
-    public void checkValidity(Map<FieldType, IFieldType> requiredFields, Map<FieldType, IFieldType> optionalFields, Map<FieldType, String> ownFields){
+    public void checkValidity(List<FieldType> requiredFields, List<FieldType> optionalFields, Map<FieldType, String> ownFields) {
         // TODO: 10.12.2019
+    }
+
+    public void print() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 100; i++) {
+            sb.append("_");
+        }
+        sb.append("\n");
+        for (int i = 0; i < 100; i++) {
+            sb.append("-");
+        }
+        sb.append("\n");
+        String recordData = "| " + entryType + "   " + key;
+        sb.append(recordData);
+        for (int i = recordData.length(); i < 99; i++) {
+            sb.append(" ");
+        }
+        sb.append("|");
+        sb.append("\n");
+        for (int i = 0; i < 100; i++) {
+            sb.append("-");
+        }
+        sb.append("\n");
+
+        fields.forEach((fieldType, s) -> {
+            sb.append(printOneAttribute(fieldType, s));
+            sb.append("\n");
+        });
+        sb.append("\n\n");
+        System.out.println(sb.toString());
+    }
+
+    private String printOneAttribute(FieldType fieldType, String s) {
+        String name = "| " + fieldType;
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(name);
+        for (int i = name.length(); i < 20; i++) {
+            stringBuilder.append(" ");
+        }
+        stringBuilder.append("|");
+        stringBuilder.append("  ");
+
+        List<String> strings = divideString(s);
+        strings.forEach(o -> {
+
+            stringBuilder.append(o);
+            if (o.length()<76){
+                for (int i=o.length();i<76;i++){
+                    stringBuilder.append(" ");
+
+                }
+            }
+            stringBuilder.append("|");
+            stringBuilder.append("\n");
+            for (int i=0;i<20;i++){
+                stringBuilder.append(" ");
+            }
+            stringBuilder.append("|  ");
+        });
+
+
+        stringBuilder.delete(stringBuilder.length()-24,stringBuilder.length());
+        stringBuilder.append("\n");
+        for (int i = 0; i < 100; i++) {
+            stringBuilder.append("-");
+        }
+        return stringBuilder.toString();
+    }
+
+    public List<String> divideString(String s) {
+        List<String> strings = new ArrayList<>();
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(s);
+        divide(stringBuilder, strings);
+        return strings;
+    }
+
+    public void divide(StringBuilder stringBuilder, List<String> strings){
+        if (stringBuilder.length()<74){
+            strings.add(stringBuilder.toString());
+            return;
+        }
+        strings.add(stringBuilder.substring(0,74));
+        divide(stringBuilder.delete(0,74),strings);
     }
 
     @Override

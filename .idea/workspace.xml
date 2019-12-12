@@ -3,7 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="571cde07-b2d1-4123-9cd6-3056cfd28456" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BibTeX-Parser/bib/parser/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BibTeX-Parser/bib/parser/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bib/parser/documentStorage/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/documentStorage/Document.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Booklet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Booklet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Conference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Conference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Entry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Entry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Inbook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Inbook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Incollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Incollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Inproceedings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Inproceedings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Manual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Manual.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Mastersthesis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Mastersthesis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Misc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Misc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Phdthesis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Phdthesis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Techreport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Techreport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Unpublished.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Unpublished.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bib/parser/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/parser/Parser.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,7 +82,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="bib.parser.Main" />
       <module name="BibTeX-Parser" />
-      <option name="PROGRAM_PARAMETERS" value="C:\Users\surja\Desktop\Studia\PO\BibTeXParserPO-master\data\testSample2.bib" />
+      <option name="PROGRAM_PARAMETERS" value="C:\Users\surja\Desktop\Studia\PO\BibTeXParserPO-master\data\sample1.bib" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
@@ -136,7 +152,7 @@
       <workItem from="1575926545278" duration="1720000" />
       <workItem from="1576006367498" duration="7528000" />
       <workItem from="1576083052427" duration="6640000" />
-      <workItem from="1576165618082" duration="497000" />
+      <workItem from="1576165618082" duration="8843000" />
     </task>
     <task id="LOCAL-00001" summary="implemented few models ale main classes">
       <created>1575554017671</created>
@@ -180,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576087502306</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="handle @string input and # in input">
+      <created>1576166580208</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1576166580208</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,18 +229,10 @@
     <MESSAGE value="refactored some code" />
     <MESSAGE value="parseString field" />
     <MESSAGE value="basic parser works" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic parser works" />
+    <MESSAGE value="handle @string input and # in input" />
+    <option name="LAST_COMMIT_MESSAGE" value="handle @string input and # in input" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/bib/parser/documentStorage/Document.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="matcher" />
