@@ -127,10 +127,10 @@ public class Parser {
             try {
 
                 FieldType fieldType = FieldType.valueOf(name_valueList.get(0).trim().toUpperCase());
-                name_valueList.remove(0);
-                StringBuilder stringBuilder = new StringBuilder();
-                name_valueList.forEach(value -> stringBuilder.append(value));
-                fieldTypeStringLinkedHashMap.put(fieldType, stringBuilder.toString());
+
+                String value = parseValue(name_valueList.get(1).trim());
+
+                fieldTypeStringLinkedHashMap.put(fieldType, value);
             } catch (IllegalArgumentException e) {
 
             }
@@ -138,5 +138,28 @@ public class Parser {
         return fieldTypeStringLinkedHashMap;
     }
 
+    private String parseValue(String value) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < value.length(); i++) {
+            if (value.charAt(i) == '{') continue;
+            if (value.charAt(i) == '}') continue;
+            if (value.charAt(i) == '"') continue;
+            if (value.charAt(i) == '#') {
+                StringBuilder sb2 = new StringBuilder();
+                while (i+1 < value.length()) {
+                    i++;
+                    sb2.append(value.charAt(i));
+
+                }
+                String toAdd = parseValue(StringService.stringMap.get(sb2.toString().trim()));
+                sb.append(toAdd);
+                if (i+1>=value.length()){
+                    return sb.toString();
+                }else i++;
+            }
+            sb.append(value.charAt(i));
+        }
+        return sb.toString();
+    }
 
 }

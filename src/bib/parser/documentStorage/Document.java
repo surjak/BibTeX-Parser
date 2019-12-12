@@ -13,26 +13,28 @@ public class Document {
     public Map<String, Entry> getEntryMap() {
         return entryMap;
     }
+
     public void addEntry(String key, Entry entry) {
         entryMap.put(key, entry);
     }
 
-    public void findByAuthor(String author){
-
-       ArrayList<Entry> list = (ArrayList<Entry>) entryMap.values().stream().filter(entry -> {
-
-           String value = entry.getFields().get(FieldType.AUTHOR);
-
-
-           String[] splitedValue = value.split("and");
-           for (String val : splitedValue){
-               if (val.trim().equals(author)) return true;
-           }
-
-           return false;
-       }).collect(Collectors.toList());
-        list.forEach(li -> System.out.println(li.getFields().get(FieldType.AUTHOR)));
-    }
+    // TODO: 11.12.2019  
+//    public Map<String, Entry> findByAuthor(String author) {
+//        Map<String, Entry> stringEntryMap = new LinkedHashMap<>();
+//        entryMap.forEach((s, entry) -> {
+//            String value = entry.getFields().get(FieldType.AUTHOR);
+//            if (value!=null){
+//                String[] splitedValue = value.split("and");
+//                for (String val : splitedValue) {
+//                    if (val.trim().equals(author)) {
+//                        stringEntryMap.put(entry.getKey(), entry);}
+//                }
+//            }
+//
+//        });
+//
+//        return stringEntryMap;
+//    }
 
 
     @Override
