@@ -140,40 +140,44 @@ public class Parser {
     }
 
     private String parseValue(String value) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < value.length(); i++) {
-            if (value.charAt(i) == '{') continue;
-            if (value.charAt(i) == '}') continue;
-            if (value.charAt(i) == '"') continue;
-            if (value.charAt(i) == '#') {
-                StringBuilder sb2 = new StringBuilder();
-                while (i + 1 < value.length()) {
-                    if (value.charAt(i + 1) == '"' || value.charAt(i + 1) == '{' || value.charAt((i + 1)) == '#') {
-                        i++;
-                        break;
-                    }
+        StringBuilder stringBuilder = new StringBuilder();
+        String[] values = value.split("#");
+        for (String s : values) {
+            StringBuilder sb = new StringBuilder();
+            char c = s.charAt(0);
+            boolean isDigit = (c >= '0' && c <= '9');
+            int j = 0;
+            if (s.trim().charAt(0) != '"' && s.trim().charAt(0) != '{' && !isDigit) {
 
-                    i++;
-                    sb2.append(value.charAt(i));
-
-                }
-                String mapValue = StringService.stringMap.get(sb2.toString().trim());
+                String mapValue = StringService.stringMap.get(s.trim());
                 if (mapValue == null) {
-
-                    System.out.println("Elementu nie ma w mapie: " + value);
+                    System.out.println("value not in map");
+                    throw new IllegalArgumentException();
                 }
-                String toAdd = parseValue(mapValue);
+                StringBuilder stringBuilder1 = new StringBuilder();
+                for (int i = 0; i < mapValue.length(); i++) {
+                    if (mapValue.charAt(i) == '{') continue;
+                    if (mapValue.charAt(i) == '}') continue;
+                    if (mapValue.charAt(i) == '"') continue;
+                    stringBuilder1.append(mapValue.charAt(i));
+                }
 
-                sb.append(toAdd);
 
-
-                if (i + 1 >= value.length()) {
-                    return sb.toString();
-                } else i++;
+                stringBuilder.append(stringBuilder1.toString());
+                continue;
             }
-            sb.append(value.charAt(i));
+
+
+            for (int i = 0; i < s.length(); i++) {
+                if (s.charAt(i) == '{') continue;
+                if (s.charAt(i) == '}') continue;
+                if (s.charAt(i) == '"') continue;
+                sb.append(s.charAt(i));
+            }
+            stringBuilder.append(sb.toString());
         }
-        return sb.toString();
+        return stringBuilder.toString();
+
     }
 
 }
