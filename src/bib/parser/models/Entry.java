@@ -81,27 +81,50 @@ public abstract class Entry {
         }
         stringBuilder.append("|");
         stringBuilder.append("  ");
-
+        if (fieldType == FieldType.AUTHOR || fieldType == FieldType.EDITOR) {
+            String[] authors = s.split("and");
+            for (String author : authors) {
+                stringBuilder.append("* ");
+        stringBuilder.append(author.trim());
+                if (author.length() < 74) {
+                    for (int i = author.trim().length(); i < 74; i++) {
+                        stringBuilder.append(" ");
+                    }
+                }
+                stringBuilder.append("|");
+                stringBuilder.append("\n");
+                for (int i = 0; i < 20; i++) {
+                    stringBuilder.append(" ");
+                }
+                stringBuilder.append("|  ");
+            }
+            stringBuilder.delete(stringBuilder.length() - 24, stringBuilder.length());
+            stringBuilder.append("\n");
+            for (int i = 0; i < 100; i++) {
+                stringBuilder.append("-");
+            }
+            return stringBuilder.toString();
+        }
         List<String> strings = divideString(s);
         strings.forEach(o -> {
 
             stringBuilder.append(o);
-            if (o.length()<76){
-                for (int i=o.length();i<76;i++){
+            if (o.length() < 76) {
+                for (int i = o.length(); i < 76; i++) {
                     stringBuilder.append(" ");
 
                 }
             }
             stringBuilder.append("|");
             stringBuilder.append("\n");
-            for (int i=0;i<20;i++){
+            for (int i = 0; i < 20; i++) {
                 stringBuilder.append(" ");
             }
             stringBuilder.append("|  ");
         });
 
 
-        stringBuilder.delete(stringBuilder.length()-24,stringBuilder.length());
+        stringBuilder.delete(stringBuilder.length() - 24, stringBuilder.length());
         stringBuilder.append("\n");
         for (int i = 0; i < 100; i++) {
             stringBuilder.append("-");
@@ -117,13 +140,13 @@ public abstract class Entry {
         return strings;
     }
 
-    public void divide(StringBuilder stringBuilder, List<String> strings){
-        if (stringBuilder.length()<74){
+    public void divide(StringBuilder stringBuilder, List<String> strings) {
+        if (stringBuilder.length() < 74) {
             strings.add(stringBuilder.toString());
             return;
         }
-        strings.add(stringBuilder.substring(0,74));
-        divide(stringBuilder.delete(0,74),strings);
+        strings.add(stringBuilder.substring(0, 74));
+        divide(stringBuilder.delete(0, 74), strings);
     }
 
     @Override

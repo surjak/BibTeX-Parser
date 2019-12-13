@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="571cde07-b2d1-4123-9cd6-3056cfd28456" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Entry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Entry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bib/parser/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/parser/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/parser/StringService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/parser/StringService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -138,7 +138,7 @@
       <workItem from="1576083052427" duration="6640000" />
       <workItem from="1576165618082" duration="9465000" />
       <workItem from="1576226868814" duration="113000" />
-      <workItem from="1576263869586" duration="3129000" />
+      <workItem from="1576263869586" duration="4918000" />
     </task>
     <task id="LOCAL-00001" summary="implemented few models ale main classes">
       <created>1575554017671</created>
@@ -196,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576174719776</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="refactored string concatenation in parser">
+      <created>1576267229761</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1576267229761</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,7 +231,8 @@
     <MESSAGE value="basic parser works" />
     <MESSAGE value="handle @string input and # in input" />
     <MESSAGE value="refactored some code and implemented print function for bibliography" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored some code and implemented print function for bibliography" />
+    <MESSAGE value="refactored string concatenation in parser" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored string concatenation in parser" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

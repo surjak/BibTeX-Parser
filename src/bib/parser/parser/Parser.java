@@ -152,7 +152,7 @@ public class Parser {
                 String mapValue = StringService.stringMap.get(s.trim());
                 if (mapValue == null) {
                     System.out.println("value not in map");
-                    throw new IllegalArgumentException();
+                    throw new RuntimeException();
                 }
                 StringBuilder stringBuilder1 = new StringBuilder();
                 for (int i = 0; i < mapValue.length(); i++) {
