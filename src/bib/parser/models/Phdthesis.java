@@ -23,9 +23,12 @@ public class Phdthesis extends Entry {
         optionalFields.add(FieldType.MONTH);
         optionalFields.add(FieldType.NOTE);
         optionalFields.add(FieldType.KEY);
-        super.checkValidity(requiredFields, optionalFields, fields);
-    }
+        checkValidity();
 
+    }
+    public void checkValidity() {
+        // TODO: 13.12.2019
+    }
     public static EntryType getType() {
         return type;
     }

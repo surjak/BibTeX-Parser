@@ -38,9 +38,7 @@ public abstract class Entry {
         this.key = key;
     }
 
-    public void checkValidity(List<FieldType> requiredFields, List<FieldType> optionalFields, Map<FieldType, String> ownFields) {
-        // TODO: 10.12.2019
-    }
+
 
     public void print() {
         StringBuilder sb = new StringBuilder();
@@ -85,7 +83,7 @@ public abstract class Entry {
             String[] authors = s.split("and");
             for (String author : authors) {
                 stringBuilder.append("* ");
-        stringBuilder.append(author.trim());
+                stringBuilder.append(author.trim());
                 if (author.length() < 74) {
                     for (int i = author.trim().length(); i < 74; i++) {
                         stringBuilder.append(" ");
