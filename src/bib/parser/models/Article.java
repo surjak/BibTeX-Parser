@@ -2,6 +2,7 @@ package bib.parser.models;
 
 import bib.parser.fields.FieldType;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -12,6 +13,8 @@ public class Article extends Entry {
 
     protected List<FieldType> requiredFields = new LinkedList<>();
     protected List<FieldType> optionalFields = new LinkedList<>();
+    private ArrayList<ArrayList<FieldType>> listOLists = new ArrayList<ArrayList<FieldType>>();
+
 
     public Article(Map<FieldType, String> fields, String key) {
         super(fields, key);
@@ -26,11 +29,14 @@ public class Article extends Entry {
         optionalFields.add(FieldType.NOTE);
         optionalFields.add(FieldType.KEY);
 
+
         checkValidity();
     }
+
     public void checkValidity() {
         // TODO: 13.12.2019
     }
+
     public static EntryType getType() {
         return type;
     }

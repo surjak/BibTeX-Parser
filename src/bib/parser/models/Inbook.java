@@ -2,6 +2,7 @@ package bib.parser.models;
 
 import bib.parser.fields.FieldType;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -10,7 +11,7 @@ public class Inbook extends Entry {
     protected static EntryType type = EntryType.INBOOK;
     protected List<FieldType> requiredFields = new LinkedList<>();
     protected List<FieldType> optionalFields = new LinkedList<>();
-
+    private ArrayList<ArrayList<FieldType>> listOLists = new ArrayList<ArrayList<FieldType>>();
     public Inbook(Map<FieldType, String> fields, String key) {
         super(fields, key);
         requiredFields.add(FieldType.AUTHOR);
@@ -31,6 +32,21 @@ public class Inbook extends Entry {
         optionalFields.add(FieldType.YEAR);
         optionalFields.add(FieldType.NOTE);
         optionalFields.add(FieldType.KEY);
+        ArrayList<FieldType> li1 = new ArrayList<>() {{
+            add(FieldType.AUTHOR);
+            add(FieldType.EDITOR);
+        }};
+        listOLists.add(li1);
+        ArrayList<FieldType> li2 = new ArrayList<>() {{
+            add(FieldType.CHAPTER);
+            add(FieldType.PAGES);
+        }};
+        listOLists.add(li2);
+        ArrayList<FieldType> li3 = new ArrayList<>() {{
+            add(FieldType.VOLUME);
+            add(FieldType.NUMBER);
+        }};
+        listOLists.add(li3);
         checkValidity();
 
     }

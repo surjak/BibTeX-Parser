@@ -2,6 +2,7 @@ package bib.parser.models;
 
 import bib.parser.fields.FieldType;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -10,7 +11,7 @@ public class Techreport extends Entry {
     protected static EntryType type = EntryType.TECHREPORT;
     protected List<FieldType> requiredFields = new LinkedList<>();
     protected List<FieldType> optionalFields = new LinkedList<>();
-
+    private ArrayList<ArrayList<FieldType>> listOLists = new ArrayList<ArrayList<FieldType>>();
     public Techreport(Map<FieldType, String> fields, String key) {
         super(fields, key);
         requiredFields.add(FieldType.AUTHOR);
@@ -23,6 +24,11 @@ public class Techreport extends Entry {
         optionalFields.add(FieldType.MONTH);
         optionalFields.add(FieldType.NOTE);
         optionalFields.add(FieldType.KEY);
+        ArrayList<FieldType> li1 = new ArrayList<>() {{
+            add(FieldType.VOLUME);
+            add(FieldType.NUMBER);
+        }};
+        listOLists.add(li1);
         checkValidity();
 
     }
