@@ -24,6 +24,8 @@ public class Manual extends Entry {
         optionalFields.add(FieldType.YEAR);
         optionalFields.add(FieldType.NOTE);
         optionalFields.add(FieldType.KEY);
+        super.filterFields(requiredFields, optionalFields, fields);
+
         checkValidity();
 
     }

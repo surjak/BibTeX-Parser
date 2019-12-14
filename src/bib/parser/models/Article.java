@@ -29,6 +29,7 @@ public class Article extends Entry {
         optionalFields.add(FieldType.NOTE);
         optionalFields.add(FieldType.KEY);
 
+        super.filterFields(requiredFields, optionalFields, fields);
 
         checkValidity();
     }

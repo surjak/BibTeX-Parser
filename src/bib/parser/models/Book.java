@@ -32,6 +32,7 @@ public class Book extends Entry {
             add(FieldType.EDITOR);
         }};
         listOLists.add(li1);
+        super.filterFields(requiredFields, optionalFields, fields);
 
         checkValidity();
 

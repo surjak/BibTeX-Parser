@@ -21,6 +21,8 @@ public class Unpublished extends Entry {
         optionalFields.add(FieldType.MONTH);
         optionalFields.add(FieldType.YEAR);
         optionalFields.add(FieldType.KEY);
+        super.filterFields(requiredFields, optionalFields, fields);
+
         checkValidity();
 
     }

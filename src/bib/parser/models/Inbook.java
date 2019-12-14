@@ -46,6 +46,8 @@ public class Inbook extends Entry {
             add(FieldType.NUMBER);
         }};
         listOLists.add(li3);
+        super.filterFields(requiredFields, optionalFields, fields);
+
         checkValidity();
 
     }

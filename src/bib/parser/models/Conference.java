@@ -34,6 +34,8 @@ public class Conference extends Entry {
             add(FieldType.NUMBER);
         }};
         listOLists.add(li1);
+        super.filterFields(requiredFields, optionalFields, fields);
+
         checkValidity();
 
     }

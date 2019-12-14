@@ -3,6 +3,8 @@ package bib.parser.models;
 import bib.parser.fields.FieldType;
 
 import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public abstract class Entry {
     protected Map<FieldType, String> fields;
@@ -38,7 +40,14 @@ public abstract class Entry {
         this.key = key;
     }
 
-
+    public void filterFields(List<FieldType> requiredFields, List<FieldType> optionalFields, Map<FieldType, String> ownFields) {
+        List<FieldType> myFields = new ArrayList<>();
+        myFields.addAll(requiredFields);
+        myFields.addAll(optionalFields);
+        fields = myFields.stream()
+                .filter(ownFields::containsKey)
+                .collect(Collectors.toMap(Function.identity(), ownFields::get));
+    }
 
     public void print() {
         StringBuilder sb = new StringBuilder();
