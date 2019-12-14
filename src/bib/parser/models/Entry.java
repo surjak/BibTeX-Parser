@@ -46,7 +46,9 @@ public abstract class Entry {
         myFields.addAll(optionalFields);
         fields = myFields.stream()
                 .filter(ownFields::containsKey)
-                .collect(Collectors.toMap(Function.identity(), ownFields::get));
+                .collect(Collectors.toMap(Function.identity(), ownFields::get, (s, s2) -> {
+                    return s;
+                },LinkedHashMap::new ));
     }
 
     public void print() {
