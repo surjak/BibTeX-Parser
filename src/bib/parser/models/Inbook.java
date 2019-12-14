@@ -1,17 +1,17 @@
 package bib.parser.models;
 
+import bib.parser.exceptions.RequiredFieldNotInEntry;
+import bib.parser.exceptions.TooManyFieldsException;
 import bib.parser.fields.FieldType;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Inbook extends Entry {
     protected static EntryType type = EntryType.INBOOK;
     protected List<FieldType> requiredFields = new LinkedList<>();
     protected List<FieldType> optionalFields = new LinkedList<>();
     private ArrayList<ArrayList<FieldType>> listOLists = new ArrayList<ArrayList<FieldType>>();
+
     public Inbook(Map<FieldType, String> fields, String key) {
         super(fields, key);
         requiredFields.add(FieldType.AUTHOR);
@@ -29,7 +29,6 @@ public class Inbook extends Entry {
         optionalFields.add(FieldType.ADDRESS);
         optionalFields.add(FieldType.EDITION);
         optionalFields.add(FieldType.MONTH);
-        optionalFields.add(FieldType.YEAR);
         optionalFields.add(FieldType.NOTE);
         optionalFields.add(FieldType.KEY);
         ArrayList<FieldType> li1 = new ArrayList<>() {{
@@ -50,9 +49,42 @@ public class Inbook extends Entry {
         checkValidity();
 
     }
+
     public void checkValidity() {
-        // TODO: 13.12.2019
+        int i = 1;
+        for (ArrayList<FieldType> fieldTypes : listOLists) {
+            int count = (int) fieldTypes.stream().map(fieldType -> fields.get(fieldType)).filter(Objects::nonNull).count();
+            if (i < 3) {
+                if (count==0){
+                    throw new RequiredFieldNotInEntry(type.toString());
+                }
+                if (count != 1) {
+                    throw new TooManyFieldsException("in " + type);
+                }
+            } else {
+                if (count >= 2) {
+                    throw new TooManyFieldsException("in " + type);
+                }
+            }
+            i++;
+        }
+        int j = 1;
+        for (ArrayList<FieldType> fieldTypes : listOLists) {
+            if (j < 3) {
+                fieldTypes.forEach(fieldType -> {
+                    requiredFields.remove(fieldType);
+                });
+            }
+            j++;
+        }
+        requiredFields.forEach(fieldType -> {
+            String value = fields.get(fieldType);
+            if (value==null){
+                throw new RequiredFieldNotInEntry("in " + type);
+            }
+        });
     }
+
     public static EntryType getType() {
         return type;
     }

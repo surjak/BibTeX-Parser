@@ -34,7 +34,7 @@ public class Article extends Entry {
     }
 
     public void checkValidity() {
-        // TODO: 13.12.2019
+
     }
 
     public static EntryType getType() {

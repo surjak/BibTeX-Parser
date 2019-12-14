@@ -1,11 +1,10 @@
 package bib.parser.models;
 
+import bib.parser.exceptions.RequiredFieldNotInEntry;
+import bib.parser.exceptions.TooManyFieldsException;
 import bib.parser.fields.FieldType;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Book extends Entry {
     protected static EntryType type = EntryType.BOOK;
@@ -23,9 +22,10 @@ public class Book extends Entry {
         optionalFields.add(FieldType.VOLUME);
         optionalFields.add(FieldType.SERIES);
         optionalFields.add(FieldType.EDITION);
-        optionalFields.add(FieldType.MONTH);
+        optionalFields.add(FieldType.ADDRESS);
         optionalFields.add(FieldType.NOTE);
         optionalFields.add(FieldType.KEY);
+        optionalFields.add(FieldType.MONTH);
 
         ArrayList<FieldType> li1 = new ArrayList<>() {{
             add(FieldType.AUTHOR);
@@ -38,7 +38,24 @@ public class Book extends Entry {
     }
 
     public void checkValidity() {
-        // TODO: 13.12.2019
+        listOLists.forEach(fieldTypes -> {
+            int count = (int) fieldTypes.stream().map(fieldType -> fields.get(fieldType)).filter(Objects::nonNull).count();
+            if (count == 0) {
+                throw new RequiredFieldNotInEntry(type.toString());
+            }
+            if (count != 1) {
+                throw new TooManyFieldsException("Too many fields in " + type);
+            }
+        });
+        listOLists.forEach(fieldTypes -> {
+            fieldTypes.forEach(fieldType -> requiredFields.remove(fieldType));
+        });
+        requiredFields.forEach(fieldType -> {
+            String value = fields.get(fieldType);
+            if (value == null) {
+                throw new RequiredFieldNotInEntry(fieldType + "not in " + type);
+            }
+        });
     }
 
     public static EntryType getType() {

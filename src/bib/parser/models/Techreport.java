@@ -1,17 +1,17 @@
 package bib.parser.models;
 
+import bib.parser.exceptions.RequiredFieldNotInEntry;
+import bib.parser.exceptions.TooManyFieldsException;
 import bib.parser.fields.FieldType;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Techreport extends Entry {
     protected static EntryType type = EntryType.TECHREPORT;
     protected List<FieldType> requiredFields = new LinkedList<>();
     protected List<FieldType> optionalFields = new LinkedList<>();
     private ArrayList<ArrayList<FieldType>> listOLists = new ArrayList<ArrayList<FieldType>>();
+
     public Techreport(Map<FieldType, String> fields, String key) {
         super(fields, key);
         requiredFields.add(FieldType.AUTHOR);
@@ -19,11 +19,17 @@ public class Techreport extends Entry {
         requiredFields.add(FieldType.INSTITUTION);
         requiredFields.add(FieldType.YEAR);
 
-        optionalFields.add(FieldType.TYPE);
+        optionalFields.add(FieldType.EDITOR);
+        optionalFields.add(FieldType.VOLUME);
+        optionalFields.add(FieldType.NUMBER);
+        optionalFields.add(FieldType.SERIES);
         optionalFields.add(FieldType.ADDRESS);
         optionalFields.add(FieldType.MONTH);
+        optionalFields.add(FieldType.ORGANIZATION);
+        optionalFields.add(FieldType.PUBLISHER);
         optionalFields.add(FieldType.NOTE);
         optionalFields.add(FieldType.KEY);
+
         ArrayList<FieldType> li1 = new ArrayList<>() {{
             add(FieldType.VOLUME);
             add(FieldType.NUMBER);
@@ -32,9 +38,22 @@ public class Techreport extends Entry {
         checkValidity();
 
     }
+
     public void checkValidity() {
-        // TODO: 13.12.2019
+        listOLists.forEach(fieldTypes -> {
+            int count = (int) fieldTypes.stream().map(fieldType -> fields.get(fieldType)).filter(Objects::nonNull).count();
+            if (count >= 2) {
+                throw new TooManyFieldsException(" in " + type);
+            }
+        });
+        requiredFields.forEach(fieldType -> {
+            String value = fields.get(fieldType);
+            if (value == null) {
+                throw new RequiredFieldNotInEntry(fieldType + " not in " + type);
+            }
+        });
     }
+
     public static EntryType getType() {
         return type;
     }
