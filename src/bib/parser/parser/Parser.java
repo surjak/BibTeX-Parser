@@ -49,7 +49,7 @@ public class Parser {
     }
 
 
-    private void parseStringValue(Scanner scanner)  {
+    public void parseStringValue(Scanner scanner)  {
 
         String string = this.parseInside(scanner);
 
@@ -69,7 +69,7 @@ public class Parser {
 
     }
 
-    private String parseInside(Scanner scanner) {
+    public String parseInside(Scanner scanner) {
         StringBuilder stringBuilder = new StringBuilder();
         char c = ' ';
         int countOfBrackets = 1;
@@ -97,7 +97,7 @@ public class Parser {
         throw new BracketNotFoundException("closing } not found in " + stringBuilder.toString());
     }
 
-    private Entry parseModel(Scanner scanner, String model) throws Exception {
+    public Entry parseModel(Scanner scanner, String model) throws Exception {
         EntryType entryType;
         try {
             entryType = EntryType.valueOf(model.toUpperCase());
@@ -122,7 +122,7 @@ public class Parser {
         return entry;
     }
 
-    private LinkedHashMap<FieldType, String> parseAttribute(List<String> strings) {
+    public LinkedHashMap<FieldType, String> parseAttribute(List<String> strings) {
         LinkedHashMap<FieldType, String> fieldTypeStringLinkedHashMap = new LinkedHashMap<>();
         strings.forEach(s -> {
 
@@ -142,7 +142,7 @@ public class Parser {
         return fieldTypeStringLinkedHashMap;
     }
 
-    private String parseValue(String value) {
+    public String parseValue(String value) {
         StringBuilder stringBuilder = new StringBuilder();
         String[] values = value.split("#");
         for (String s : values) {
