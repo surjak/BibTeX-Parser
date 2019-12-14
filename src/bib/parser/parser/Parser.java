@@ -63,7 +63,7 @@ public class Parser {
             if (!attribute.matches())
                 throw new ErrorInMatcherException("error in : "+str);
             String stringName = attribute.group(1);
-            String value = attribute.group(2);
+            String value = parseValue(attribute.group(2));
             StringService.stringMap.put(stringName, value);
         }
 

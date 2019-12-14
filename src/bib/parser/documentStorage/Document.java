@@ -3,6 +3,7 @@ package bib.parser.documentStorage;
 import bib.parser.fields.FieldType;
 import bib.parser.models.Article;
 import bib.parser.models.Entry;
+import bib.parser.models.EntryType;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -18,25 +19,42 @@ public class Document {
         entryMap.put(key, entry);
     }
 
-
-    public Map<String, Entry> findByAuthor(String author) {
-        Map<String, Entry> stringEntryMap = new LinkedHashMap<>();
-        entryMap.forEach((s, entry) -> {
-            String value = entry.getFields().get(FieldType.AUTHOR);
-            if (value!=null){
-                String[] splitedValue = value.split("and");
-                for (String val : splitedValue) {
-                    if (val.trim().equals(author)) {
-                        stringEntryMap.put(entry.getKey(), entry);}
-                }
+    public void findByCategories(List<String> categories) {
+        List<EntryType> entryTypes = new ArrayList<>();
+        categories.forEach(s -> {
+            String cat = s.trim().toUpperCase();
+            try {
+                entryTypes.add(EntryType.valueOf(cat));
+            } catch (IllegalArgumentException e) {
             }
-
         });
-
-        return stringEntryMap;
+        Map<String, Entry> newEntryMap = new LinkedHashMap<>();
+        entryMap.forEach((s, entry) -> {
+            if (entryTypes.contains(entry.getEntryType())) {
+                newEntryMap.put(s, entry);
+            }
+        });
+        entryMap = newEntryMap;
     }
 
-    public void print(){
+    public void findByAuthor(List<String> authors) {
+
+        Map<String, Entry> authorEntryMap = new LinkedHashMap<>();
+        entryMap.forEach((s, entry) -> {
+            String value = entry.getFields().get(FieldType.AUTHOR);
+            if (value != null) {
+                String[] splitedValue = value.split("and");
+                for (String val : splitedValue) {
+                    if (authors.contains(val.toUpperCase().trim())) {
+                        authorEntryMap.put(s, entry);
+                    }
+                }
+            }
+        });
+        entryMap = authorEntryMap;
+    }
+
+    public void print() {
         entryMap.forEach((s, entry) -> entry.print());
     }
 

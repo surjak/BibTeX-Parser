@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="571cde07-b2d1-4123-9cd6-3056cfd28456" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Entry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Entry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BibTeX-Parser/bib/parser/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BibTeX-Parser/bib/parser/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/documentStorage/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/documentStorage/Document.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/inputHandler/InputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/inputHandler/InputHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/parser/Parser.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,10 +66,10 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+    <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="bib.parser.Main" />
       <module name="BibTeX-Parser" />
-      <option name="PROGRAM_PARAMETERS" value="C:\Users\surja\Desktop\Studia\PO\BibTeXParserPO-master\data\sample1.bib" />
+      <option name="PROGRAM_PARAMETERS" value="C:\Users\surja\Desktop\Studia\PO\BibTeXParserPO-master\data\sample1.bib -c article book booklet inbook techreport" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
@@ -102,7 +106,6 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in BibTeX-Parser" />
         <item itemvalue="JUnit.MultipleFieldTypeImplTest" />
       </list>
@@ -139,7 +142,7 @@
       <workItem from="1576226868814" duration="113000" />
       <workItem from="1576263869586" duration="9921000" />
       <workItem from="1576316240500" duration="583000" />
-      <workItem from="1576316856566" duration="8513000" />
+      <workItem from="1576316856566" duration="14734000" />
     </task>
     <task id="LOCAL-00001" summary="implemented few models ale main classes">
       <created>1575554017671</created>
@@ -246,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576324495765</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="keep order in Collectors.toMap solved">
+      <created>1576325596048</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1576325596048</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,7 +291,8 @@
     <MESSAGE value="implemented field validation" />
     <MESSAGE value="added own exceptions to parser" />
     <MESSAGE value="filter fields done" />
-    <option name="LAST_COMMIT_MESSAGE" value="filter fields done" />
+    <MESSAGE value="keep order in Collectors.toMap solved" />
+    <option name="LAST_COMMIT_MESSAGE" value="keep order in Collectors.toMap solved" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
