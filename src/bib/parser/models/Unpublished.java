@@ -1,5 +1,6 @@
 package bib.parser.models;
 
+import bib.parser.exceptions.RequiredFieldNotInEntry;
 import bib.parser.fields.FieldType;
 
 import java.util.ArrayList;
@@ -27,6 +28,12 @@ public class Unpublished extends Entry {
 
     }
     public void checkValidity() {
+        requiredFields.forEach(fieldType -> {
+            String value = fields.get(fieldType);
+            if (value == null) {
+                throw new RequiredFieldNotInEntry(fieldType + "not in " + type);
+            }
+        });
     }
     public static EntryType getType() {
         return type;

@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="571cde07-b2d1-4123-9cd6-3056cfd28456" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/test/bib/parser/documentStorage/DocumentTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/bib/parser/models/BookTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/bib/parser/models/BookletTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BibTeX-Parser/bib/parser/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BibTeX-Parser/bib/parser/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/documentStorage/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/documentStorage/Document.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/inputHandler/InputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/inputHandler/InputHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/parser/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Booklet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Booklet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Manual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Manual.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Mastersthesis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Mastersthesis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Misc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Misc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Phdthesis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Phdthesis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Unpublished.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Unpublished.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +25,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -46,7 +51,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="bib.parser.models" />
       <recent name="bib.parser.documentStorage" />
+      <recent name="bib.parser.inputHandler" />
       <recent name="bib.parser.fields" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -65,35 +72,88 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.ArticleTest">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="bib.parser.Main" />
       <module name="BibTeX-Parser" />
-      <option name="PROGRAM_PARAMETERS" value="C:\Users\surja\Desktop\Studia\PO\BibTeXParserPO-master\data\sample1.bib -c article book booklet inbook techreport" />
+      <option name="PROGRAM_PARAMETERS" value="C:\Users\surja\Desktop\Studia\PO\BibTeXParserPO-master\data\sample1.bib" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in BibTeX-Parser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArticleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BibTeX-Parser" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bib.parser.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="bib.parser.models" />
+      <option name="MAIN_CLASS_NAME" value="bib.parser.models.ArticleTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MultipleFieldTypeImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BibTeX-Parser" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="bib.parser.fields.*" />
+          <option name="PATTERN" value="bib.parser.models.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="bib.parser.fields" />
-      <option name="MAIN_CLASS_NAME" value="bib.parser.fields.MultipleFieldTypeImplTest" />
+      <option name="PACKAGE_NAME" value="bib.parser.models" />
+      <option name="MAIN_CLASS_NAME" value="bib.parser.models.BookTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookTest.checkValidity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BibTeX-Parser" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bib.parser.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="bib.parser.models" />
+      <option name="MAIN_CLASS_NAME" value="bib.parser.models.BookTest" />
+      <option name="METHOD_NAME" value="checkValidity" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookletTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BibTeX-Parser" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bib.parser.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="bib.parser.models" />
+      <option name="MAIN_CLASS_NAME" value="bib.parser.models.BookletTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DocumentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BibTeX-Parser" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bib.parser.documentStorage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="bib.parser.documentStorage" />
+      <option name="MAIN_CLASS_NAME" value="bib.parser.documentStorage.DocumentTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -101,13 +161,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.All in BibTeX-Parser" />
-      <item itemvalue="JUnit.MultipleFieldTypeImplTest" />
+      <item itemvalue="JUnit.DocumentTest" />
+      <item itemvalue="JUnit.BookTest" />
+      <item itemvalue="JUnit.BookTest.checkValidity" />
+      <item itemvalue="JUnit.BookletTest" />
+      <item itemvalue="JUnit.ArticleTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in BibTeX-Parser" />
-        <item itemvalue="JUnit.MultipleFieldTypeImplTest" />
+        <item itemvalue="JUnit.ArticleTest" />
+        <item itemvalue="JUnit.BookletTest" />
+        <item itemvalue="JUnit.BookTest.checkValidity" />
+        <item itemvalue="JUnit.BookTest" />
+        <item itemvalue="JUnit.DocumentTest" />
       </list>
     </recent_temporary>
   </component>
@@ -142,7 +208,7 @@
       <workItem from="1576226868814" duration="113000" />
       <workItem from="1576263869586" duration="9921000" />
       <workItem from="1576316240500" duration="583000" />
-      <workItem from="1576316856566" duration="14734000" />
+      <workItem from="1576316856566" duration="18401000" />
     </task>
     <task id="LOCAL-00001" summary="implemented few models ale main classes">
       <created>1575554017671</created>
@@ -256,7 +322,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576325596048</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="find by authors and find by categories done">
+      <created>1576331687128</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1576331687128</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +365,8 @@
     <MESSAGE value="added own exceptions to parser" />
     <MESSAGE value="filter fields done" />
     <MESSAGE value="keep order in Collectors.toMap solved" />
-    <option name="LAST_COMMIT_MESSAGE" value="keep order in Collectors.toMap solved" />
+    <MESSAGE value="find by authors and find by categories done" />
+    <option name="LAST_COMMIT_MESSAGE" value="find by authors and find by categories done" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
