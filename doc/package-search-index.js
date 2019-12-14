@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"bib.parser"},{"l":"bib.parser.documentStorage"},{"l":"bib.parser.exceptions"},{"l":"bib.parser.fields"},{"l":"bib.parser.inputHandler"},{"l":"bib.parser.models"},{"l":"bib.parser.parser"}]

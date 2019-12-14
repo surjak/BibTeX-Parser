@@ -2,33 +2,119 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="571cde07-b2d1-4123-9cd6-3056cfd28456" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/allclasses-index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/allclasses.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/allpackages-index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/Main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/documentStorage/Document.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/documentStorage/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/documentStorage/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/exceptions/BracketNotFoundException.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/exceptions/ErrorInMatcherException.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/exceptions/RequiredFieldNotInEntry.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/exceptions/TooManyFieldsException.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/exceptions/ValueNotInStringMapException.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/exceptions/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/exceptions/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/fields/FieldType.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/fields/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/fields/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/inputHandler/InputHandler.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/inputHandler/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/inputHandler/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/models/Article.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/models/Book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/models/Booklet.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/models/Conference.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/models/Entry.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/models/EntryType.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/models/Inbook.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/models/Incollection.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/models/Inproceedings.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/models/Manual.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/models/Mastersthesis.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/models/Misc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/models/Phdthesis.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/models/Techreport.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/models/Unpublished.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/models/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/models/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/parser/EntryClassService.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/parser/Parser.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/parser/StringService.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/parser/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/bib/parser/parser/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/constant-values.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/deprecated-list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/element-list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/help-doc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-10.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-11.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-12.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-13.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-14.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-15.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-16.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-17.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-18.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-19.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-20.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-21.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index-files/index-9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/external/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/images/ui-bg_glass_55_fbf9ee_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/images/ui-bg_glass_65_dadada_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/images/ui-bg_glass_75_dadada_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/images/ui-bg_glass_75_e6e6e6_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/images/ui-bg_glass_95_fef1ec_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/images/ui-bg_highlight-soft_75_cccccc_1x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/images/ui-icons_222222_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/images/ui-icons_2e83ff_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/images/ui-icons_454545_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/images/ui-icons_888888_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/images/ui-icons_cd0a0a_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jquery-3.3.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jquery-migrate-3.0.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jquery-ui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jquery-ui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jquery-ui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jquery-ui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jquery-ui.structure.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jquery-ui.structure.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jszip-utils/dist/jszip-utils-ie.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jszip-utils/dist/jszip-utils-ie.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jszip-utils/dist/jszip-utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jszip-utils/dist/jszip-utils.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jszip/dist/jszip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/jquery/jszip/dist/jszip.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/member-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/member-search-index.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/overview-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/overview-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/package-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/package-search-index.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/resources/glass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/resources/x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/serialized-form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/stylesheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/type-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/type-search-index.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/documentStorage/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/documentStorage/Document.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/exceptions/BracketNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/exceptions/BracketNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/exceptions/ErrorInMatcherException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/exceptions/ErrorInMatcherException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/exceptions/RequiredFieldNotInEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/exceptions/RequiredFieldNotInEntry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/exceptions/TooManyFieldsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/exceptions/TooManyFieldsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/exceptions/ValueNotInStringMapException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/exceptions/ValueNotInStringMapException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/fields/FieldType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/fields/FieldType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/inputHandler/InputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/inputHandler/InputHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Booklet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Booklet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Conference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Conference.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Entry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Entry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/EntryType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/EntryType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Inbook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Inbook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Incollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Incollection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Inproceedings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Inproceedings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Manual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Manual.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Mastersthesis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Mastersthesis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Misc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Misc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Phdthesis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Phdthesis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Techreport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Techreport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Unpublished.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Unpublished.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/parser/EntryClassService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/parser/EntryClassService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/parser/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/parser/StringService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/parser/StringService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +137,7 @@
   </component>
   <component name="ProjectId" id="1ULucxcIokSWBO7UBYlt4Q4XiYC" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -60,9 +147,9 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -220,7 +307,8 @@
       <workItem from="1576263869586" duration="9921000" />
       <workItem from="1576316240500" duration="583000" />
       <workItem from="1576316856566" duration="21331000" />
-      <workItem from="1576343850770" duration="5292000" />
+      <workItem from="1576343850770" duration="5939000" />
+      <workItem from="1576350379348" duration="76000" />
     </task>
     <task id="LOCAL-00001" summary="implemented few models ale main classes">
       <created>1575554017671</created>
@@ -362,7 +450,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576338202300</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="added javadoc">
+      <created>1576349365528</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1576349365528</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,7 +497,8 @@
     <MESSAGE value="created some tests and added missing code to models" />
     <MESSAGE value="created tests for all models" />
     <MESSAGE value="created all tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="created all tests" />
+    <MESSAGE value="added javadoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="added javadoc" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
