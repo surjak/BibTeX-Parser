@@ -2,24 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="571cde07-b2d1-4123-9cd6-3056cfd28456" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/bib/parser/exceptions/RequiredFieldNotInEntry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bib/parser/exceptions/TooManyFieldsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bib/parser/exceptions/BracketNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bib/parser/exceptions/ErrorInMatcherException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bib/parser/exceptions/ValueNotInStringMapException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Booklet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Booklet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Conference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Conference.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Inbook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Inbook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Incollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Incollection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Inproceedings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Inproceedings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Manual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Manual.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Mastersthesis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Mastersthesis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Misc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Misc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Phdthesis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Phdthesis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Techreport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Techreport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Unpublished.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Unpublished.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/bib/parser/documentStorage/DocumentTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/bib/parser/fields/MultipleFieldTypeImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/parser/Parser.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -155,7 +142,7 @@
       <workItem from="1576226868814" duration="113000" />
       <workItem from="1576263869586" duration="9921000" />
       <workItem from="1576316240500" duration="583000" />
-      <workItem from="1576316856566" duration="4534000" />
+      <workItem from="1576316856566" duration="5493000" />
     </task>
     <task id="LOCAL-00001" summary="implemented few models ale main classes">
       <created>1575554017671</created>
@@ -241,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576272401549</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="implemented field validation">
+      <created>1576321431343</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1576321431343</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +267,8 @@
     <MESSAGE value="changed print method" />
     <MESSAGE value="refactored models" />
     <MESSAGE value="created list of lists for all models and defined &quot;OR&quot; fields" />
-    <option name="LAST_COMMIT_MESSAGE" value="created list of lists for all models and defined &quot;OR&quot; fields" />
+    <MESSAGE value="implemented field validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented field validation" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

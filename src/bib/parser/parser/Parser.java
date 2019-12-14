@@ -1,6 +1,9 @@
 package bib.parser.parser;
 
 import bib.parser.documentStorage.Document;
+import bib.parser.exceptions.BracketNotFoundException;
+import bib.parser.exceptions.ErrorInMatcherException;
+import bib.parser.exceptions.ValueNotInStringMapException;
 import bib.parser.fields.FieldType;
 import bib.parser.models.*;
 
@@ -46,7 +49,7 @@ public class Parser {
     }
 
 
-    private void parseStringValue(Scanner scanner) throws Exception {
+    private void parseStringValue(Scanner scanner)  {
 
         String string = this.parseInside(scanner);
 
@@ -56,17 +59,17 @@ public class Parser {
             Matcher whiteSpaces = Pattern.compile("\\s+").matcher(str);
 
             if (whiteSpaces.matches()) continue;
-            Matcher record = (Pattern.compile("\\s*([a-zA-Z]\\w*)\\s*=\\s*(\\S.*)\\s*")).matcher(str);
-            if (!record.matches())
-                throw new Exception("cos poszlo nie tak");
-            String stringName = record.group(1);
-            String value = record.group(2);
+            Matcher attribute = (Pattern.compile("\\s*([a-zA-Z]\\w*)\\s*=\\s*(\\S.*)\\s*")).matcher(str);
+            if (!attribute.matches())
+                throw new ErrorInMatcherException("error in : "+str);
+            String stringName = attribute.group(1);
+            String value = attribute.group(2);
             StringService.stringMap.put(stringName, value);
         }
 
     }
 
-    private String parseInside(Scanner scanner) throws Exception {
+    private String parseInside(Scanner scanner) {
         StringBuilder stringBuilder = new StringBuilder();
         char c = ' ';
         int countOfBrackets = 1;
@@ -91,7 +94,7 @@ public class Parser {
 
         }
 
-        throw new Exception("Parse inside - end }");
+        throw new BracketNotFoundException("closing } not found in " + stringBuilder.toString());
     }
 
     private Entry parseModel(Scanner scanner, String model) throws Exception {
@@ -112,11 +115,11 @@ public class Parser {
         strings.remove(0);
         LinkedHashMap<FieldType, String> fields;
         fields = parseAttribute(strings);
-        Class<? extends Entry> classObject = EntryClassService.getClassFromEntryType(entryType);
+        Class<? extends Entry> classObj = EntryClassService.getClassFromEntryType(entryType);
 
-        Entry record = classObject.getConstructor(Map.class, String.class).newInstance(fields, key);
-        record.setEntryType(entryType);
-        return record;
+        Entry entry = classObj.getConstructor(Map.class, String.class).newInstance(fields, key);
+        entry.setEntryType(entryType);
+        return entry;
     }
 
     private LinkedHashMap<FieldType, String> parseAttribute(List<String> strings) {
@@ -151,8 +154,7 @@ public class Parser {
 
                 String mapValue = StringService.stringMap.get(s.trim());
                 if (mapValue == null) {
-                    System.out.println("value not in map");
-                    throw new RuntimeException();
+                    throw new ValueNotInStringMapException("value not in map");
                 }
                 StringBuilder stringBuilder1 = new StringBuilder();
                 for (int i = 0; i < mapValue.length(); i++) {
