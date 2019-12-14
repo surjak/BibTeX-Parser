@@ -9,22 +9,20 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ArticleTest {
-    Article article;
-    String key = "key";
-    Map<FieldType, String> fields;
+class PhdthesisTest {
 
     @Test
     void checkValidity() {
-        fields = new HashMap<>();
+        String key = "key";
+        Map<FieldType, String> fields = new HashMap<>();
         fields.put(FieldType.AUTHOR, "a");
+        fields.put(FieldType.SCHOOL, "a");
         fields.put(FieldType.YEAR, "a");
-        fields.put(FieldType.JOURNAL, "a");
-        fields.put(FieldType.PUBLISHER, "a");
+
         assertThrows(RequiredFieldNotInEntry.class, () -> {
-            article = new Article(fields, key);
+            Phdthesis manual = new Phdthesis(fields, key);
         });
         fields.put(FieldType.TITLE, "a");
-        article = new Article(fields, key);
+        Phdthesis manual = new Phdthesis(fields, key);
     }
 }
