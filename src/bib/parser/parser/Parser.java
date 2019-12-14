@@ -14,13 +14,26 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
+/**
+ * Class parsing file to object form
+ */
 public class Parser {
 
 
+    /**
+     * No args constructor
+     */
     public Parser() {
     }
 
 
+    /**
+     * Method that parse file
+     *
+     * @param name path to file
+     * @return
+     * @throws Exception when file wasn't found
+     */
     public Document parse(String name) throws Exception {
         Document document = new Document();
         File file = new File(name);
@@ -49,6 +62,11 @@ public class Parser {
     }
 
 
+    /**
+     * Method that parse @String
+     *
+     * @param scanner scanner
+     */
     public void parseStringValue(Scanner scanner)  {
 
         String string = this.parseInside(scanner);
@@ -69,6 +87,12 @@ public class Parser {
 
     }
 
+    /**
+     * Method that parse file inside brackets
+     *
+     * @param scanner scanner
+     * @return string
+     */
     public String parseInside(Scanner scanner) {
         StringBuilder stringBuilder = new StringBuilder();
         char c = ' ';
@@ -97,6 +121,14 @@ public class Parser {
         throw new BracketNotFoundException("closing } not found in " + stringBuilder.toString());
     }
 
+    /**
+     * Method that returns entry
+     *
+     * @param scanner scanner
+     * @param model string
+     * @return entry
+     * @throws Exception
+     */
     public Entry parseModel(Scanner scanner, String model) throws Exception {
         EntryType entryType;
         try {
@@ -122,6 +154,12 @@ public class Parser {
         return entry;
     }
 
+    /**
+     * Parse list of Strings to map FieldType - String
+     *
+     * @param strings list of strings
+     * @return map of FieldType-String
+     */
     public LinkedHashMap<FieldType, String> parseAttribute(List<String> strings) {
         LinkedHashMap<FieldType, String> fieldTypeStringLinkedHashMap = new LinkedHashMap<>();
         strings.forEach(s -> {
@@ -142,6 +180,12 @@ public class Parser {
         return fieldTypeStringLinkedHashMap;
     }
 
+    /**
+     * Method that removes all \{ , \" and \} from string and make string concatenation
+     *
+     * @param value string
+     * @return string
+     */
     public String parseValue(String value) {
         StringBuilder stringBuilder = new StringBuilder();
         String[] values = value.split("#");

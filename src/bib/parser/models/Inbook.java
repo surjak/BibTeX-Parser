@@ -6,12 +6,23 @@ import bib.parser.fields.FieldType;
 
 import java.util.*;
 
+/**
+ * Class representing structure of inbook
+ */
 public class Inbook extends Entry {
+    /**
+     * Class fields
+     */
     protected static EntryType type = EntryType.INBOOK;
     protected List<FieldType> requiredFields = new LinkedList<>();
     protected List<FieldType> optionalFields = new LinkedList<>();
     private ArrayList<ArrayList<FieldType>> listOLists = new ArrayList<ArrayList<FieldType>>();
-
+    /**
+     * Constructor
+     *
+     * @param fields fields
+     * @param key key
+     */
     public Inbook(Map<FieldType, String> fields, String key) {
         super(fields, key);
         requiredFields.add(FieldType.AUTHOR);
@@ -52,6 +63,9 @@ public class Inbook extends Entry {
 
     }
 
+    /**
+     * Checks if all required fields were given and if fields aren't colliding
+     */
     public void checkValidity() {
         int i = 1;
         for (ArrayList<FieldType> fieldTypes : listOLists) {
@@ -87,6 +101,9 @@ public class Inbook extends Entry {
         });
     }
 
+    /**
+     * @return type of entry
+     */
     public static EntryType getType() {
         return type;
     }

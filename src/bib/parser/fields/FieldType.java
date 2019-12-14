@@ -1,5 +1,8 @@
 package bib.parser.fields;
 
+/**
+ * Enumeration with all field types
+ */
 public enum FieldType {
     AUTHOR,
     TITLE,

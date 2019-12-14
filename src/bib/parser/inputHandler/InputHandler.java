@@ -6,8 +6,14 @@ import bib.parser.parser.Parser;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class used to handle program arguments
+ */
 public class InputHandler {
 
+    /**
+     * Method that prints help when user hasn't entered any arguments
+     */
     public static void help() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("---------------------------------------------------------------");
@@ -22,6 +28,12 @@ public class InputHandler {
         System.out.println(stringBuilder);
     }
 
+    /**
+     * Handle program arguments
+     *
+     * @param args program arguments
+     * @throws Exception when parser throws Exception
+     */
     public static void handle(String[] args) throws Exception {
         if (args.length == 0) {
             help();
@@ -60,6 +72,14 @@ public class InputHandler {
 
     }
 
+    /**
+     * Method that calls parser and decide what should be displayed
+     *
+     * @param filename First program argument - path to the file
+     * @param authors list of program arguments that are of type Author
+     * @param categories list of program arguments that are of type Category
+     * @throws Exception when parser throws Exception
+     */
     private static void parseStart(String filename, List<String> authors, List<String> categories) throws Exception {
         Parser parser = new Parser();
         Document document = parser.parse(filename);

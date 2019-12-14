@@ -8,17 +8,37 @@ import bib.parser.models.EntryType;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * Container of entries
+ */
 public class Document {
+    /**
+     * Map of entries
+     */
     private Map<String, Entry> entryMap = new LinkedHashMap<>();
 
+    /**
+     * @return map of entries
+     */
     public Map<String, Entry> getEntryMap() {
         return entryMap;
     }
 
+    /**
+     * Add Entry to map
+     *
+     * @param key key
+     * @param entry entry
+     */
     public void addEntry(String key, Entry entry) {
         entryMap.put(key, entry);
     }
 
+    /**
+     * Method that filter entryMap
+     *
+     * @param categories List of categories
+     */
     public void findByCategories(List<String> categories) {
         List<EntryType> entryTypes = new ArrayList<>();
         categories.forEach(s -> {
@@ -37,6 +57,11 @@ public class Document {
         entryMap = newEntryMap;
     }
 
+    /**
+     * Method that filter entryMap
+     *
+     * @param authors List of authors
+     */
     public void findByAuthor(List<String> authors) {
 
         Map<String, Entry> authorEntryMap = new LinkedHashMap<>();
@@ -54,6 +79,9 @@ public class Document {
         entryMap = authorEntryMap;
     }
 
+    /**
+     * Method that call print() on all entries
+     */
     public void print() {
         entryMap.forEach((s, entry) -> entry.print());
     }

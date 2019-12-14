@@ -8,11 +8,24 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Class representing structure of booklet
+ */
 public class Booklet extends Entry {
+    /**
+     * Class fields
+     */
     protected static EntryType type = EntryType.BOOKLET;
     protected List<FieldType> requiredFields = new LinkedList<>();
     protected List<FieldType> optionalFields = new LinkedList<>();
     private ArrayList<ArrayList<FieldType>> listOLists = new ArrayList<ArrayList<FieldType>>();
+
+    /**
+     * Constructor
+     *
+     * @param fields fields
+     * @param key key
+     */
     public Booklet(Map<FieldType, String> fields, String key) {
         super(fields, key);
         requiredFields.add(FieldType.TITLE);
@@ -28,6 +41,10 @@ public class Booklet extends Entry {
         checkValidity();
 
     }
+
+    /**
+     * Checks if all required fields were given and if fields aren't colliding
+     */
     public void checkValidity() {
         requiredFields.forEach(fieldType -> {
             String value = fields.get(fieldType);
@@ -36,6 +53,10 @@ public class Booklet extends Entry {
             }
         });
     }
+
+    /**
+     * @return type of entry
+     */
     public static EntryType getType() {
         return type;
     }

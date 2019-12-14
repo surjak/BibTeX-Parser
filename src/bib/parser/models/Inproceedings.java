@@ -6,11 +6,23 @@ import bib.parser.fields.FieldType;
 
 import java.util.*;
 
+/**
+ * Class representing structure of inproceedings
+ */
 public class Inproceedings extends Entry {
+    /**
+     * Class fields
+     */
     protected static EntryType type = EntryType.INPROCEEDINGS;
     protected List<FieldType> requiredFields = new LinkedList<>();
     protected List<FieldType> optionalFields = new LinkedList<>();
     private ArrayList<ArrayList<FieldType>> listOLists = new ArrayList<ArrayList<FieldType>>();
+    /**
+     * Constructor
+     *
+     * @param fields fields
+     * @param key key
+     */
     public Inproceedings(Map<FieldType, String> fields, String key) {
         super(fields, key);
         requiredFields.add(FieldType.AUTHOR);
@@ -38,6 +50,10 @@ public class Inproceedings extends Entry {
         checkValidity();
 
     }
+
+    /**
+     * Checks if all required fields were given and if fields aren't colliding
+     */
     public void checkValidity() {
         listOLists.forEach(fieldTypes -> {
             int count = (int) fieldTypes.stream().map(fieldType -> fields.get(fieldType)).filter(Objects::nonNull).count();
@@ -52,6 +68,10 @@ public class Inproceedings extends Entry {
             }
         });
     }
+
+    /**
+     * @return type of entry
+     */
     public static EntryType getType() {
         return type;
     }

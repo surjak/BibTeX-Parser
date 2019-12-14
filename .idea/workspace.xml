@@ -2,11 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="571cde07-b2d1-4123-9cd6-3056cfd28456" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/bib/parser/parser/EntryClassServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/bib/parser/parser/ParserTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/bib/parser/parser/StringServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/documentStorage/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/documentStorage/Document.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/exceptions/BracketNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/exceptions/BracketNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/exceptions/ErrorInMatcherException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/exceptions/ErrorInMatcherException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/exceptions/RequiredFieldNotInEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/exceptions/RequiredFieldNotInEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/exceptions/TooManyFieldsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/exceptions/TooManyFieldsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/exceptions/ValueNotInStringMapException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/exceptions/ValueNotInStringMapException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/fields/FieldType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/fields/FieldType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/inputHandler/InputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/inputHandler/InputHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Booklet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Booklet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Conference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Conference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Entry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Entry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/EntryType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/EntryType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Inbook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Inbook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Incollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Incollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Inproceedings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Inproceedings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Manual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Manual.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Mastersthesis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Mastersthesis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Misc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Misc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Phdthesis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Phdthesis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Techreport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Techreport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/models/Unpublished.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/models/Unpublished.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/parser/EntryClassService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/parser/EntryClassService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bib/parser/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/parser/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/parser/StringService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/parser/StringService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -197,7 +219,8 @@
       <workItem from="1576226868814" duration="113000" />
       <workItem from="1576263869586" duration="9921000" />
       <workItem from="1576316240500" duration="583000" />
-      <workItem from="1576316856566" duration="21118000" />
+      <workItem from="1576316856566" duration="21331000" />
+      <workItem from="1576343850770" duration="5292000" />
     </task>
     <task id="LOCAL-00001" summary="implemented few models ale main classes">
       <created>1575554017671</created>
@@ -332,7 +355,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576336979249</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="created all tests">
+      <created>1576338202300</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1576338202300</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,7 +401,8 @@
     <MESSAGE value="find by authors and find by categories done" />
     <MESSAGE value="created some tests and added missing code to models" />
     <MESSAGE value="created tests for all models" />
-    <option name="LAST_COMMIT_MESSAGE" value="created tests for all models" />
+    <MESSAGE value="created all tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="created all tests" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

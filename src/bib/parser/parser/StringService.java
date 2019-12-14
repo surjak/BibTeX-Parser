@@ -3,7 +3,13 @@ package bib.parser.parser;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Class containing strings
+ */
 public class StringService {
+    /**
+     * static map of strings
+     */
     public static Map<String, String> stringMap = new HashMap<>(){{
         put("jan", "January");
         put("feb", "February");
