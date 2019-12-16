@@ -78,7 +78,6 @@ public class Document {
         });
         entryMap = authorEntryMap;
     }
-
     /**
      * Method that call print() on all entries
      */

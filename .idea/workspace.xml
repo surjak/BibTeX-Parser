@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="571cde07-b2d1-4123-9cd6-3056cfd28456" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BibTeX-Parser/bib/parser/documentStorage/Document.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BibTeX-Parser/bib/parser/documentStorage/Document.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bib/parser/documentStorage/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bib/parser/documentStorage/Document.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,11 +66,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.DocumentTest.addEntry">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="bib.parser.Main" />
       <module name="BibTeX-Parser" />
-      <option name="PROGRAM_PARAMETERS" value="C:\Users\surja\Documents\Programowanie\Java\BibTeX-Parser\data\plik.bib" />
+      <option name="PROGRAM_PARAMETERS" value="C:\Users\surja\Documents\Programowanie\Java\BibTeX-Parser\data\plik.bib -n &quot;Donald E. Knuth&quot; -c book article" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
@@ -79,6 +81,22 @@
       <module name="BibTeX-Parser" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DocumentTest.addEntry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BibTeX-Parser" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bib.parser.documentStorage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="bib.parser.documentStorage" />
+      <option name="MAIN_CLASS_NAME" value="bib.parser.documentStorage.DocumentTest" />
+      <option name="METHOD_NAME" value="addEntry" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -130,36 +148,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="BibTeX-Parser" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="bib.parser.parser.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="bib.parser.parser" />
-      <option name="MAIN_CLASS_NAME" value="bib.parser.parser.StringServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.StringServiceTest" />
       <item itemvalue="JUnit.ParserTest" />
       <item itemvalue="JUnit.ParserTest.parseAttribute" />
       <item itemvalue="JUnit.ParserTest.parseValue" />
       <item itemvalue="JUnit.All in BibTeX-Parser" />
+      <item itemvalue="JUnit.DocumentTest.addEntry" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DocumentTest.addEntry" />
         <item itemvalue="JUnit.All in BibTeX-Parser" />
+        <item itemvalue="JUnit.ParserTest.parseValue" />
         <item itemvalue="JUnit.ParserTest" />
         <item itemvalue="JUnit.ParserTest.parseAttribute" />
-        <item itemvalue="JUnit.ParserTest.parseValue" />
-        <item itemvalue="JUnit.StringServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -197,7 +200,8 @@
       <workItem from="1576316856566" duration="21331000" />
       <workItem from="1576343850770" duration="5939000" />
       <workItem from="1576350379348" duration="76000" />
-      <workItem from="1576479837375" duration="1396000" />
+      <workItem from="1576479837375" duration="1560000" />
+      <workItem from="1576485541733" duration="2509000" />
     </task>
     <task id="LOCAL-00001" summary="implemented few models ale main classes">
       <created>1575554017671</created>
@@ -346,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576349365528</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="added data file">
+      <created>1576481295954</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1576481295954</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,7 +398,8 @@
     <MESSAGE value="created tests for all models" />
     <MESSAGE value="created all tests" />
     <MESSAGE value="added javadoc" />
-    <option name="LAST_COMMIT_MESSAGE" value="added javadoc" />
+    <MESSAGE value="added data file" />
+    <option name="LAST_COMMIT_MESSAGE" value="added data file" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
